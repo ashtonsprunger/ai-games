@@ -9,7 +9,7 @@ const updateDiff = () => {
 };
 
 const navigateToGame = () => {
-  window.location.href = `${window.location.origin}/checkers.html?diff=${diff}`;
+  window.location.href = `https://ashtonsprunger.github.io/ai-games/checkers.html?diff=${diff}`;
 };
 
 diffEl.addEventListener("change", updateDiff);
