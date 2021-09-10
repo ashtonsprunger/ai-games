@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#board {
+  position: relative;
+  height: 700px;
+  width: 700px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.piece {
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  background-size: cover;
+  /* border-radius: 50%; */
+}
+
+.move {
+  position: absolute;
+  width: 43.75px;
+  height: 43.75px;
+  border-radius: 50%;
+}
+
+.light {
+  background-color: rgb(218, 201, 177);
+}
+
+.dark {
+  background-color: rgb(128, 66, 66);
+}
