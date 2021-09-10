@@ -11,16 +11,16 @@ let currentBoard = [
   [-1, 0, -1, 0, -1, 0, -1, 0],
 ];
 
-// currentBoard = [
-//   [0, 5, 0, 0, 0, 0, 0, 0],
-//   [5, 0, 0, 0, 0, 0, 0, 0],
-//   [0, 0, 0, 0, 0, 0, 0, 0],
-//   [0, 0, 0, 0, 0, 0, 0, 0],
-//   [0, 0, 0, 0, 0, 0, 0, 0],
-//   [0, 0, 0, 0, 0, 0, 0, 0],
-//   [0, 0, 0, -5, 0, 0, 0, 0],
-//   [0, 0, 0, 0, 0, 0, 0, 0],
-// ];
+  // currentBoard = [
+  //   [0, 5, 0, 1, 0, 0, 0, 0],
+  //   [5, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, -5, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0],
+  // ];
 
 let availibleMoves = []
 let currentPiece
@@ -358,8 +358,8 @@ const minimax = (board, depth, alpha, beta, maximizingPlayer) => {
       }
       let pieceEl = document.createElement('div')
       pieceEl.classList.add('piece')
-      pieceEl.style.left = `${(x*87.5) + 21.875}px`
-      pieceEl.style.top = `${(y*87.5) + 21.875}px`
+      pieceEl.style.left = `${(x*12.5) + 1.75}%`
+      pieceEl.style.top = `${(y*12.5) + 1.75}%`
       pieceEl.style.backgroundColor = colors[current]
       // pieceEl.style.border = borders[current]
       if(Math.abs(current) > 1){
@@ -375,8 +375,8 @@ const minimax = (board, depth, alpha, beta, maximizingPlayer) => {
   availibleMoves.forEach(move => {
     let moveEl = document.createElement('div')
     moveEl.classList.add('move')
-    moveEl.style.left = `${(move[1][1]*87.5) + 21.875}px`
-    moveEl.style.top = `${(move[1][0]*87.5) + 21.875}px`
+    moveEl.style.left = `${(move[1][1]*12.5) + 1.75}%`
+    moveEl.style.top = `${(move[1][0]*12.5) + 1.75}%`
     moveEl.style.backgroundColor = 'rgba(255,255,255,.4)'
     moveEl.id = `[${move[1][0]},${move[1][1]}]`
     moveEl.addEventListener('click', (e) => {
@@ -437,12 +437,12 @@ const moveAnimate = (move, el, times) => {
     return
   }
   if(Math.abs(move[0][0] - move[1][0]) == 2){
-    document.getElementById(JSON.stringify(move[0])).style.left = `${Number.parseFloat(document.getElementById(JSON.stringify(move[0])).style.left)-(move[0][1]-move[1][1])*2}px`
-    document.getElementById(JSON.stringify(move[0])).style.top = `${Number.parseFloat(document.getElementById(JSON.stringify(move[0])).style.top)-(move[0][0]-move[1][0])*2}px`
+    document.getElementById(JSON.stringify(move[0])).style.left = `${Number.parseFloat(document.getElementById(JSON.stringify(move[0])).style.left)-(move[0][1]-move[1][1])*.28}%`
+    document.getElementById(JSON.stringify(move[0])).style.top = `${Number.parseFloat(document.getElementById(JSON.stringify(move[0])).style.top)-(move[0][0]-move[1][0])*.28}%`
   }else{
     console.log('id:', JSON.stringify(move[0]))
-    document.getElementById(JSON.stringify(move[0])).style.left = `${Number.parseFloat(document.getElementById(JSON.stringify(move[0])).style.left)-(move[0][1]-move[1][1])*2}px`
-    document.getElementById(JSON.stringify(move[0])).style.top = `${Number.parseFloat(document.getElementById(JSON.stringify(move[0])).style.top)-(move[0][0]-move[1][0])*2}px`
+    document.getElementById(JSON.stringify(move[0])).style.left = `${Number.parseFloat(document.getElementById(JSON.stringify(move[0])).style.left)-(move[0][1]-move[1][1])*.28}%`
+    document.getElementById(JSON.stringify(move[0])).style.top = `${Number.parseFloat(document.getElementById(JSON.stringify(move[0])).style.top)-(move[0][0]-move[1][0])*.28}%`
   }
   setTimeout(()=>moveAnimate(move, el, times-1),10)
 }
