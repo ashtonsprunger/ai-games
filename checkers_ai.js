@@ -321,7 +321,7 @@ const minimax = (board, depth, alpha, beta, maximizingPlayer) => {
       humanEl.innerText = 'YOUR TURN'
       aiEl.innerText = '- - -'
     }else {
-      aiEl.innerText = 'AI\'S TURN'
+      aiEl.innerText = 'DAVE\'S TURN'
       humanEl.innerText = '- - -'
     }
     if(TURN == HUMAN && getMoves(currentBoard, human).length == 0){
