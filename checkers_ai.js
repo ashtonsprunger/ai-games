@@ -325,7 +325,7 @@ const minimax = (board, depth, alpha, beta, maximizingPlayer) => {
       humanEl.innerText = '- - -'
     }
     if(TURN == HUMAN && getMoves(currentBoard, human).length == 0){
-      humanEl.innerText = 'AI WON'
+      humanEl.innerText = 'DAVE WON'
       aiEl.innerText = ''
     }else if(TURN == AI && getMoves(currentBoard, ai).length == 0){
       humanEl.innerText = 'YOU WON'
