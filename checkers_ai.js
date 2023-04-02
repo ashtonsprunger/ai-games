@@ -325,7 +325,7 @@ const getBestMove = (board) => {
   });
   console.log(evals);
   let max = Math.max(...evals);
-  console.log(getGameStateText(max));
+  console.error(getGameStateText(max));
   moves = moves.filter((move, index) => evals[index] == max);
   return moves[Math.floor(Math.random() * moves.length)];
 };
