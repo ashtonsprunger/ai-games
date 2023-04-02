@@ -337,11 +337,11 @@ const updateTurns = () => {
     humanEl.innerText = "YOUR TURN";
     aiEl.innerText = "- - -";
   } else {
-    aiEl.innerText = "AI'S TURN";
+    aiEl.innerText = "DAVE'S TURN";
     humanEl.innerText = "- - -";
   }
   if (TURN == HUMAN && getMoves(currentBoard, human).length == 0) {
-    humanEl.innerText = "AI WON";
+    humanEl.innerText = "DAVE WON";
     aiEl.innerText = "";
   } else if (TURN == AI && getMoves(currentBoard, ai).length == 0) {
     humanEl.innerText = "YOU WON";
