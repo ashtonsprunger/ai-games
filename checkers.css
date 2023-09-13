@@ -36,6 +36,17 @@
   border-radius: 50%;
 }
 
+#myProgress {
+  width: 100%;
+  background-color: rgb(114, 255, 131);
+}
+
+#myBar {
+  width: 50%;
+  height: 20px;
+  background-color: rgb(255, 122, 122);
+}
+
 @media only screen and (min-width: 600px) {
   body {
     display: flex;

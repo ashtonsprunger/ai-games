@@ -325,7 +325,13 @@ const getBestMove = (board) => {
   });
   console.log(evals);
   let max = Math.max(...evals);
-  console.error(getGameStateText(max));
+  // console.error(getGameStateText(max));
+  document.querySelector("#state").innerHTML = getGameStateText(max);
+  let percent = 100 / (1 + Math.exp(max - 1));
+  console.log("PERCENT:", percent);
+  // percent = percent > 100 ? 100 : percent;
+  // percent = percent < 0 ? 0 : percent;
+  document.querySelector("#myBar").style.width = `${percent}%`;
   moves = moves.filter((move, index) => evals[index] == max);
   return moves[Math.floor(Math.random() * moves.length)];
 };
